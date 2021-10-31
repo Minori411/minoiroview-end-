@@ -33,9 +33,6 @@ default: &default
     - .woff2
 
   extensions:
-    - .tsx
-    - .ts
-    - .jsx
     - .mjs
     - .js
     - .sass
@@ -73,8 +70,6 @@ development:
       'Access-Control-Allow-Origin': '*'
     watch_options:
       ignored: '**/node_modules/**'
-      aggregateTimeout: 300
-      poll: 500
 
 
 test:
