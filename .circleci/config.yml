@@ -7,10 +7,10 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:3.0.2
-    working_directory: ~/Minoiro_view
+    working_directory: ~/minoiroview
     steps:
       - checkout:
-          path: ~/Minoiro_view
+          path: ~/minoiroview
       - ruby/install-deps
 
   test:
@@ -25,10 +25,10 @@ jobs:
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
-    working_directory: ~/Minoiro_view
+    working_directory: ~/minoiroview
     steps:
       - checkout:
-          path: ~/Minoiro_view
+          path: ~/minoiroview
       - ruby/install-deps
       - run:
           name: Database setup
@@ -43,7 +43,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          version: 20.10.8
+          version: 20.10.6
       - heroku/install
       - run:
           name: heroku login
